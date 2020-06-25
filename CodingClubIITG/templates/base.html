@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    {% load static %}
+    <title>Coding Club IITG</title>
+    <link rel = "icon" href = "{% static 'core/images_2/favicon.ico' %}" type = "image/x-icon">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Meet the team new code in head section-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'CodingClubIITG/css/style1.css' %}">
+
+    <!-- My versions -->
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- End -->
+
+
+    <!--end of Meet the team new code in head section -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>{% block title %}Base Template{% endblock %}</title>
+    <link href="{% static 'CodingClubIITG/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'CodingClubIITG/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'CodingClubIITG/css/animate.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'CodingClubIITG/css/lightbox.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'CodingClubIITG/css/main.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'CodingClubIITG/css/responsive.css' %}" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+    <script src="{% static 'CodingClubIITG/js/html5shiv.js' %}"></script>
+    <script src="{% static 'CodingClubIITG/js/respond.min.js' %}"></script>
+<![endif]-->
+<link rel="shortcut icon" href="images/ico/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'CodingClubIITG/images/ico/apple-touch-icon-144-precomposed.png' %}">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'CodingClubIITG/images/ico/apple-touch-icon-114-precomposed.png' %}">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'CodingClubIITG/images/ico/apple-touch-icon-72-precomposed.png' %}">
+<link rel="apple-touch-icon-precomposed" href="{% static 'CodingClubIITG/images/ico/apple-touch-icon-57-precomposed.png' %}">
+</head><!--/head-->
+
+<body>
+	<header id="header">
+       <div class="container">
+        <div class="row">
+            <div class="col-sm-12 overflow">
+                <div class="social-icons pull-right">
+                    <ul class="nav nav-pills">
+                        <li><a href="https://www.facebook.com/codingclubiitg/"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="">  <img id="git2" src="{% static 'CodingClubIITG/images/github.png' %}" height="18px" width="18px">  </a></li>
+                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="{% url 'index' %}">
+                   <h1><img src="{% static 'CodingClubIITG/images/18623168_453929331606843_1092010086_n.png' %}" alt="logo" height=60px;></h1>
+                   <p> <img src="{% static 'CodingClubIITG/images/18600949_453929328273510_283481760_n.png' %}" alt="logo" height=28px;> </p>
+               </a>
+
+           </div>
+           <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                {% block home_active %}<li ><a href= "{% url 'index' %}" ><b>Home</b></a></li>{% endblock %}
+                {% block About_us_active %}<li class="dropdown"><a href="{% url 'aboutus' %}"><b>About Us</b> </a></li>{% endblock %}
+                {% if user.is_authenticated %}
+                {% block events_active %}<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" ><b>Events</b> </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{% url 'events' %}" style="color: #000000;">View Events</a>
+                        <a class="dropdown-item" href="{% url 'addevents' %}" style="color: #000000;">Add Events</a>
+                    </div>
+                </li>{% endblock %}
+                {% else %}
+                {% block events %}<li class="dropdown"><a href="{% url 'events' %}"><b>Events</b> </a></li>{% endblock %}
+                {% endif %}
+                {% if user.is_authenticated %}
+                {% block projects_active %}<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" ><b>Projects</b> </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{% url 'projects' %}" style="color: #000000;">View Projects</a>
+                        <a class="dropdown-item" href="{% url 'addprojects' %}" style="color: #000000;">Add Projects</a>
+                    </div>
+                </li>{% endblock %}
+                {% else %}
+                {% block projects %}<li class="dropdown"><a href="{% url 'projects' %}"><b>Projects</b> </a></li>{% endblock %}
+                {% endif %}
+                {% if user.is_authenticated %}
+                <li><a href="javascript:{document.getElementById('logout').submit()}"><b>Logout</b></a>
+                  <form action="{% url 'logout' %}" id="logout" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden">
+                </form>
+            </li>
+            {% else %}
+            <li><a href="{% url 'register' %}"><b>Register</b> </a></li>
+            <li><a href="{%url 'login'%}"><b>Log In</b></a></li>
+            {% endif %}
+            <li><button class="button button3" ><a id="iitghome" href="http://www.iitg.ac.in/" target="_blank">IITG HOME </a> </button></li>
+            <li class="dropdown"><a href="{% url 'feedback' %}"><b>Contact Us</b> </a></li>
+        </ul>
+    </div>
+</div>
+</div>
+
+</header>
+
+{% block content %}
+{% endblock %}
+
+<script type="text/javascript" src="{% static 'CodingClubIITG/js/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'CodingClubIITG/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'CodingClubIITG/js/lightbox.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'CodingClubIITG/js/wow.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'CodingClubIITG/js/main.js' %}"></script>
+</body>
+<!--/#blog-->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center bottom-separator">
+                <img src="{% static 'CodingClubIITG/images/home/under.png' %}" class="img-responsive inline" alt="">
+            </div>
+
+
+
+            <div class="col-sm-12">
+                <div class="copyright-text text-center">
+                    <p>&copy; Coding Club IITG. All Rights Reserved.</p>
+                    <p>Crafted by <a target="_blank" href="https://www.facebook.com/profile.php?id=100006958546245">Ritwik Ganguly</a> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--/#footer-->
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Coding Club IITG</title>
+    <link rel = "icon" href = "{% static 'CodingClubIITG/images_2/favicon.ico' %}" type = "image/x-icon">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Meet the team new code in head section-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'CodingClubIITG/css/style1.css' %}">
+
+    <!-- My versions -->
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- End -->
+
+    <!--end of Meet the team new code in head section -->
+
+    <link href="{% static 'CodingClubIITG/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'CodingClubIITG/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'CodingClubIITG/css/animate.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'CodingClubIITG/css/lightbox.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'CodingClubIITG/css/main.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'CodingClubIITG/css/responsive.css' %}" rel="stylesheet" type="text/css">
+
+    <!--[if lt IE 9]>
+    <script src="{% static 'CodingClubIITG/js/html5shiv.js' %}"></script>
+    <script src="{% static 'CodingClubIITG/js/respond.min.js' %}"></script>
+<![endif]-->
+
+<style>
+
+    #effect1 h1 {
+        font: 100px Tahoma, Helvetica, Arial, Sans-Serif;
+        text-align: center;
+        color: white;
+        text-shadow: 0px 2px 3px #555;
+    }
+
+    # effect2 h2 {
+        font: 70px Tahoma, Helvetica, Arial, Sans-Serif;
+        text-align: center;
+        color: #222;
+        text-shadow: 0px 2px 3px #555;
+    }
+</style>
+</head><!--/head-->
+
+<body>
+	<header id="header">
+      <div class="container">
+        <div class="row">
+            <div class="col-sm-12 overflow">
+               <div class="social-icons pull-right">
+                <ul class="nav nav-pills">
+                    <li><a href="https://www.facebook.com/codingclubiitg/"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="">  <img id="git2" src="{% static 'CodingClubIITG/images/github.png' %}" height="18px" width="18px">  </a></li>
+                    <li><a href="mailto:codingclubiitg@gmail.com"><i class="fa fa-google-plus"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="navbar navbar-inverse" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="{% url 'index' %}">
+             <h1><img src="{% static 'CodingClubIITG/images/18623168_453929331606843_1092010086_n.png' %}" alt="logo" height=60px;></h1>
+             <p> <img src="{% static 'CodingClubIITG/images/18600949_453929328273510_283481760_n.png' %}" alt="logo" height=28px;> </p>
+         </a>
+
+     </div>
+     <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+            {% block home_active %}<li ><a href= "{% url 'index' %}" ><b>Home</b></a></li>{% endblock %}
+            {% block About_us_active %}<li class="dropdown"><a href="{% url 'aboutus' %}"><b>About Us</b> </a></li>{% endblock %}
+            {% if user.is_authenticated %}
+            {% block events_active %}<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" ><b>Events</b> </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'events' %}" style="color: #000000;">View Events</a>
+                    <a class="dropdown-item" href="{% url 'addevents' %}" style="color: #000000;">Add Events</a>
+                </div>
+            </li>{% endblock %}
+            {% else %}
+            {% block events %}<li class="dropdown"><a href="{% url 'events' %}"><b>Events</b> </a></li>{% endblock %}
+            {% endif %}
+            {% if user.is_authenticated %}
+            {% block projects_active %}<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" ><b>Projects</b> </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'projects' %}" style="color: #000000;">View Projects</a>
+                    <a class="dropdown-item" href="{% url 'addprojects' %}" style="color: #000000;">Add Projects</a>
+                </div>
+            </li>{% endblock %}
+            {% else %}
+            {% block projects %}<li class="dropdown"><a href="{% url 'projects' %}"><b>Projects</b> </a></li>{% endblock %}
+            {% endif %}
+            {% if user.is_authenticated %}
+            <li><a href="javascript:{document.getElementById('logout').submit()}"><b>Logout</b></a>
+              <form action="{% url 'logout' %}" id="logout" method="POST">
+                {% csrf_token %}
+                <input type="hidden">
+            </form>
+        </li>
+        {% else %}
+        <li><a href="{% url 'register' %}"><b>Register</b> </a></li>
+        <li><a href="{%url 'login'%}"><b>Log In</b></a></li>
+        {% endif %}
+        <li><button class="button button3" ><a id="iitghome" href="http://www.iitg.ac.in/" target="_blank">IITG HOME </a> </button></li>
+        <li class="dropdown"><a href="{% url 'feedback' %}"><b>Contact Us</b> </a></li>
+
+    </ul>
+</div>
+</div>
+</div>
+
+</header>
+<!--/#header-->
+
+<section id="home-slider">
+    <div class="container">
+        <div class="main-slider">
+            <div class="slide-text">
+                <h1 class="main-text"><b>Welcome To Coding Club</b></h1>
+                <br/>
+                <h1 class="second-text"><b> Of </b></h1>
+                <br/>
+                <h1 class="third-text" > <b> IIT Guwahati </b></h1>
+            </div>
+            <img src="{% static 'CodingClubIITG/images/home/slider/slide1/download.png' %}" class="img-responsive iitglogo" alt="slider image"  width="200px" >
+            <img src="{% static 'CodingClubIITG/images/home/slider/slide1/hand-coded-websites.png' %}" class="img-responsive handimage" alt="slider image"  width="300px" >
+            <img src="{% static 'CodingClubIITG/images/home/slider/slide1/img-31.png' %}" class="slider-geekman" alt="" height="225px">
+            <img src="{% static 'CodingClubIITG/images/home/slider/slide1/Presentation1.png' %}" class="allimage" alt="" height="170px">
+            <img src="{% static 'CodingClubIITG/images/home/slider/slide1/onsite-bootcamp-splash-bg-2.png' %}" class="groupcoding" alt="" height="225px">
+        </div>
+    </div>
+    <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
+</section>
+<!--/#home-slider-->
+
+
+<section id="action" class="responsive">
+    <div class="vertical-center">
+     <div class="container">
+        <div class="row">
+            <div class="action take-tour">
+                <div class="col-sm-7 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <h1 class="checkoutour">Check Out Our Club's Events</h1>
+                    <p id="adjustingposition">The Club activities encompasses several competitions and sessions for the students. </p>
+                </div>
+                <div class="col-sm-5 text-center wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <div class="tour-button">
+                        <a href="{%url 'events'%}" class="btn btn-common">TAKE THE TOUR</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!--/#action-->
+{% if user %}
+<h1 class="upcomingevents" > <b>Your Favorites</b>  </a></h1>
+
+<div class="container">
+  <div id="overflow">
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#events">Events</a></li>
+    <li><a data-toggle="tab" href="#projects">Projects</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="events" class="tab-pane fade in active">
+      <h2>Favorite events</h2>
+      {% if favorite_events %}
+      <div align="right">
+        <a href="{% url 'unfavorite_event_all' %}"><button type="button" class="btn btn-theme">Unfavorite all</button></a>
+      </div>
+      <div class="row" style="height:1000px;overflow:auto">
+    		{% for favorite in favorite_events %}
+    		<div class="col-sm-4">
+    			<div class="card">
+    				<div class="card-header"><h2><a href="{% url 'event_detail' favorite.event.id %}">{{ favorite.event.name }}</a></h2></div>
+    				<div class="card-block">
+              <img class="img-responsive" style="object-fit: cover;" src="{{ favorite.event.img.url }}">
+    					<h3>Venue: {{ favorite.event.venue }}</h3>
+    					<p>Event Details: {{ favorite.event.details }}</p>
+    					<h3>Speakers: {{ favorite.event.speakers }}</h3>
+              <div class="text-right" id="effect{{favorite.event.pk}}">
+                <button type="button" class="btn btn-theme" data-toggle="tooltip" data-placement="bottom" title="Unfavorite" value="{{ favorite.event.pk }}" onclick="unfavoriteevent(this)"><i class="material-icons" style="color:red">favorite</i></button>
+              </div>
+            </div>
+    				<div class="card-footer">Date: {{ favorite.event.date }}</div>
+    			</div>
+    		</div>
+    		{% endfor %}
+    	</div>
+      {% else %}
+        <h3> You didn't add any events to your favorites.</h3>
+      {% endif %}
+    </div>
+    <div id="projects" class="tab-pane fade">
+      <h2>Favorite projects</h2>
+      {% if favorite_projects %}
+      <div align="right">
+        <a href="{% url 'unfavorite_project_all' %}"><button type="button" class="btn btn-theme">Unfavorite all</button></a>
+      </div>
+    	<div class="row" style="height:1000px;overflow:auto">
+    		{% for favorite in favorite_projects %}
+    		<div class="col-sm-4">
+    			<div class="card">
+    				<div class="card-header"><a href="{% url 'project_detail' favorite.project.id %}">{{ favorite.project.name }}</a></div>
+    				<div class="card-block">
+    					<h3>Outline: {{ favorite.project.outline }}</h3>
+    					<p>Project Details: {{ favorite.project.details }}</p>
+    					<p>Pre-Requisites: {{ favorite.project.prereq }}</p>
+              <div class="text-right" id="change{{favorite.project.pk}}">
+                <button type="button" class="btn btn-theme" data-toggle="tooltip" data-placement="bottom" title="Unfavorite" value="{{favorite.project.pk}}" onclick="unfavoriteproject(this)"><i class="material-icons" style="color:red">favorite</i></button>
+              </div>
+    				</div>
+    				<div class="card-footer">Date: {{ favorite.project.date }}</div>
+    			</div>
+    		</div>
+    		{% endfor %}
+    	</div>
+      {% else %}
+        <h3> You didn't add any projects to your favorites.</h3>
+      {% endif %}
+    </div>
+  </div>
+</div>
+</div>
+{% endif %}
+
+
+<h1 class="upcomingevents" > <b>Running Projects</b>  </a></h1>
+
+<section id="features">
+    <div class="container">
+        <div class="row">
+            <div class="single-features">
+                <div class="col-sm-5 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                  <img src="{% static 'CodingClubIITG/images/portfolio/entertainmentbot.png' %}" class="img-responsive" alt=""></a>
+              </div>
+              <div class="col-sm-6 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                <h2><b> <a href="{% url 'projects' %}"><div class="apperancecolor"> Machine Learning Projects
+                </div></a></b>Python</h2>
+            </div>
+        </div>
+        <div class="single-features">
+            <div class="col-sm-6 col-sm-offset-1 align-right wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+             <h2><b><a href="{% url 'projects' %}"><div class="apperancecolor">Campus Quora
+             </div></a></b> Android Studio & Firebase </h2>
+         </div>
+         <div class="col-sm-5 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+            <img src="{% static 'CodingClubIITG/images/portfolio/searchengine.png' %}" class="img-responsive" alt="">
+        </div>
+    </div>
+    <div class="single-features">
+        <div class="col-sm-5 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+            <img src="{% static 'CodingClubIITG/images/portfolio/calendarapp.jpg' %}" class="img-responsive" alt="">
+        </div>
+        <div class="col-sm-6 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+         <h2><b><a href="{% url 'projects' %}"><div class="apperancecolor">Time Table App
+         </div></a> </b>Android Studio & Firebase</h2>
+     </div>
+ </div>
+</div>
+</div>
+</section>
+<!--/#features-->
+
+
+
+
+<!--/#clients-->
+
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center bottom-separator">
+                <img src="{% static 'CodingClubIITG/images/home/under.png' %}" class="img-responsive inline" alt="">
+            </div>
+
+            <div class="col-sm-12">
+                <div class="copyright-text text-center">
+                    <p>&copy; Coding Club IITG. All Rights Reserved.</p>
+                    <p>Crafted by <a target="_blank" href="https://www.facebook.com/profile.php?id=100006958546245">Ritwik Ganguly</a> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--/#footer-->
+
+<script>
+
+function favoriteevent(d) {
+  var input = d.getAttribute('value');
+
+  $.ajax({
+      url: "{% url 'favorite_event' %}",
+      data: {
+        csrfmiddlewaretoken: "{{ csrf_token }}",
+        'inputValue': input
+      },
+      dataType: 'json',
+      success: function (data) {
+        place = "effect" + input
+        html = '<button type="button" class="btn btn-theme" data-toggle="tooltip" data-placement="bottom" title="Unfavorite" value="'+data['pk']+'" onclick="unfavoriteevent(this)"><i class="material-icons" style="color:red">favorite</i></button>'
+        document.getElementById(place).innerHTML = html;
+      }
+    });
+  }
+
+function unfavoriteevent(d) {
+  var input = d.getAttribute('value');
+
+  $.ajax({
+      url: "{% url 'unfavorite_event' %}",
+      data: {
+        csrfmiddlewaretoken: "{{ csrf_token }}",
+        'inputValue': input
+      },
+      dataType: 'json',
+      success: function (data) {
+        place = "effect" + input
+        html = '<button type="button" class="btn btn-theme" data-toggle="tooltip" data-placement="bottom" title="Add to favorites" value="'+data['pk']+'" onclick="favoriteevent(this)"><i class="material-icons">favorite_border</i></button>'
+        document.getElementById(place).innerHTML = html;
+
+      }
+    });
+  }
+
+  function favoriteproject(d) {
+    var input = d.getAttribute('value');
+    $.ajax({
+        url: "{% url 'favorite_project' %}",
+        data: {
+          csrfmiddlewaretoken: "{{ csrf_token }}",
+          'inputValue': input
+        },
+        dataType: 'json',
+        success: function (data) {
+          place = "change" + input
+          html = '<button type="button" class="btn btn-theme" data-toggle="tooltip" data-placement="bottom" title="Unfavorite" value="'+data['pk']+'" onclick="unfavoriteproject(this)"><i class="material-icons" style="color:red">favorite</i></button>'
+          document.getElementById(place).innerHTML = html;
+        }
+      });
+    }
+
+  function unfavoriteproject(d) {
+    var input = d.getAttribute('value');
+
+    $.ajax({
+        url: "{% url 'unfavorite_project' %}",
+        data: {
+          csrfmiddlewaretoken: "{{ csrf_token }}",
+          'inputValue': input
+        },
+        dataType: 'json',
+        success: function (data) {
+          place = "change" + input
+          html = '<button type="button" class="btn btn-theme" data-toggle="tooltip" data-placement="bottom" title="Add to favorites" value="'+data['pk']+'" onclick="favoriteproject(this)"><i class="material-icons">favorite_border</i></button>'
+          document.getElementById(place).innerHTML = html;
+
+        }
+      });
+    }
+
+</script>
+<script type="text/javascript" src="{% static 'CodingClubIITG/js/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'CodingClubIITG/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'CodingClubIITG/js/lightbox.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'CodingClubIITG/js/wow.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'CodingClubIITG/js/main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="container" style="margin-top:40px">
+
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li {% if message.tags %} class="{{message.tags}}" {% endif %}>
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+          <div class="alert alert-success alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>{{message}}</strong>
+          </div>
+          {% endif %}
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+          <div class="alert alert-danger alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>{{message}}</strong>
+          </div>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    
+    <h2> Feedback/Suggestion </h2>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {% for field in form %}
+        <div class="form-group row">
+          <label for="field.label_tag" class="col-sm-2 col-form-label" > {{ field.label_tag }} </label>
+          <div class="col-sm-10" required>{{ field }}</div>
+        </div>
+      {% endfor %}
+
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+
+{% endblock %}

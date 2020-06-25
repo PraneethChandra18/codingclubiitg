@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Blog{% endblock %}
+{% load static %}
+{% block content %}
+<section id="page-breadcrumb">
+    <div class="vertical-center sun">
+         <div class="container">
+            <div class="row">
+                <div class="action">
+                    <div class="col-sm-12">
+                      <h1 class="aboutus  wow fadeInDown" data-wow-duration="500ms" data-wow-delay="300ms" > <b> Blog </b> </h1>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/#action-->
+
+<section id="blog" class="padding-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-7">
+                <div class="row">
+                     <!-- code for blog #1 -->
+                     <div class="col-md-6 col-sm-12 blog-padding-right">
+                        <div class="single-blog two-column">
+                            <div class="post-thumb">
+                                <img src="{% static 'CodingClubIITG/images/blog/timeline/webdevelopment.png' %}" class="img-responsive" alt="">
+                                <div class="post-overlay">
+                                    <span class="uppercase"><a>17 <br><small>May</small></a></span>
+                                </div>
+                            </div>
+                            <div class="post-content overflow">
+                                <h2 class="post-title bold"><a href="blogwebdevelopment.html"><b>Getting started and going deep into Web Development </b></a></h2>
+                                <h3 class="post-author">Posted by <a href="https://www.facebook.com/ssinghal1968">Shubham Singhal</a></h3>
+
+                            </div>
+                        </div>
+                     </div>
+                </div>
+
+                <!-- end of code for blog#1 -->
+                <!-- code for blog #2 -->
+                <div class="col-md-6 col-sm-12 blog-padding-right">
+                    <div class="single-blog two-column">
+                        <div class="post-thumb">
+                            <img src="{% static 'CodingClubIITG/images/blog/timeline/cybersecurity.jpg' %}" class="img-responsive" alt="">
+                            <div class="post-overlay">
+                                <span class="uppercase"><a>17 <br><small>May</small></a></span>
+                            </div>
+                        </div>
+                        <div class="post-content overflow">
+                            <h2 class="post-title bold"><a href="blogcybersecurity.html"><b>CCSOC event-IIT Kanpur Network series and the prerequisites to get started </b></a></h2>
+                            <h3 class="post-author">Posted by <a href="https://www.facebook.com/satyajnv?fref=mentions">Satya Prakash</a></h3>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end of code for blog #2 -->
+        </div>
+        <div class="blog-pagination">
+            <ul class="pagination">
+              <li class="active"><a href="#">left</a></li>
+              <li><a href="#">1</a></li>
+
+              <li><a href="#">right</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}

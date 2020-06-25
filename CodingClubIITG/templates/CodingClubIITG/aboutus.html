@@ -1,0 +1,1115 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}aboutus{% endblock %}
+{% block content %}
+<section id="page-breadcrumb">
+    <div class="vertical-center sun">
+         <div class="container">
+            <div class="row">
+                <div class="action">
+                    <div class="col-sm-12">
+                        <h1 class="aboutus  wow fadeInDown" data-wow-duration="500ms" data-wow-delay="300ms" > <b> About Us </b> </h1>
+
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/#page-breadcrumb-->
+
+<section id="company-information" class="aboutuspadding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="{% static 'CodingClubIITG/images/coding-club1.gif' %}" class="img-responsive" alt="">
+            </div>
+            <div class="col-sm-6 padding-top">
+                <p style="font-size:160%;"><b>"Great things are done by a series of small things brought together".</b><br></p>
+                   <p style="font-size:110%;">   Being Coding Club of a technical institution we do pretty much everything and anything related to coding.
+                   Coding events, Workshops, Hackathons(48 hours non stop coding), contests are just to name few. We also organise online courses on various topics like Web Development, App Development, Bash Scripting etc. to help kickstart students' interest in various fields. We believe in letting the code take over.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--/#action-->
+<section id="page-breadcrumb">
+        <div class="vertical-center ">
+             <div class="container">
+                <div class="row">
+                    <div class="action">
+                        <div class="col-sm-12">
+                            <h1 class="meetourteam  wow fadeInDown" data-wow-duration="500ms" data-wow-delay="300ms" > <b> Meet Our Team  </b> </h1>
+
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<div class="container">
+    <div>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#pres">PRESENT TEAM</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#past">PAST TEAM</a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-content">
+            <div id="pres" class="container tab-pane active"><br>
+                <div class="row">
+                    {% for member in members %}
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{{ member.img.url }}" alt="team member" class="img-responsive"  style="object-fit: cover;" >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>{{member.intro}}</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="{{member.fblink}}" target="_blank">   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="{{member.gitlink}}" target="_blank">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>{{member.name}}</b></h5>
+                            <span><b>{{member.position}}</b></span>
+                        </div>
+                    </div>
+                    {% endfor %}
+        <!-- 
+            <div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/ashish.jpg' %}" alt="team member" class="img-responsive"  >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>I love to introduce myself as the Competitive Coding Head of Coding Club.</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://www.facebook.com/profile.php?id=100007091288405" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="https://github.com/LavishGulati">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Ashish Agarwal</b></h5>
+                            <span><b>Competitive Coding Head</b></span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/prathyoom.jpg' %}" alt="team member" class="img-responsive"  >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>I love to introduce myself as the Competitive Coding Head of Coding Club.</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://www.facebook.com/prathyoom" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="https://github.com/LavishGulati">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Prathyoom Sridharan</b></h5>
+                            <span><b>Competitive Coding Head</b></span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/adit.jpg' %}" alt="team member" class="img-responsive"  >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>I love to introduce myself as the Open Source Head of Coding Club.</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://www.facebook.com/adit.ism" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="https://github.com/LavishGulati">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Adit Jain</b></h5>
+                            <span><b>Open Source Head</b></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/mukul.jpg' %}" alt="team member" class="img-responsive"   >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>I love to introduce myself as the Machine Learning Head of Coding Club.</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://https://www.facebook.com/mukul.ranjan.984" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="https://github.com/mukul54">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Mukul Ranjan</b></h5>
+                            <span><b>Machine Learning Head</b></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/anurag.jpg' %}" alt="team member" class="img-responsive"  >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>I love to introduce myself as the Machine Learning Head of Coding Club.</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://www.facebook.com/anuragak.ak" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="https://github.com/LavishGulati">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Anurag Kumar</b></h5>
+                            <span><b>Machine Learning Head</b></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/aranya.jpg' %}" alt="team member" class="img-responsive"  >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>I love to introduce myself as the App Development Head of Coding Club.</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://www.facebook.com/profile.php?id=100002677847173" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="https://github.com/LavishGulati">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Aranya Aryaman</b></h5>
+                            <span><b>App Development Head</b></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/arav.jpg' %}" alt="team member" class="img-responsive"  >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>I love to introduce myself as the Networks and Security Head of Coding Club.</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://www.facebook.com/ARAVGARG08" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="https://github.com/LavishGulati">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Arav Garg</b></h5>
+                            <span><b>Networks and Security Head</b></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/tanya.jpg' %}" alt="team member" class="img-responsive"  >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>I love to introduce myself as the Web Development Head of Coding Club.</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://www.facebook.com/tanya.chauhan.09" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="https://github.com/LavishGulati">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Tanya Chauhan</b></h5>
+                            <span><b>Web Development Head</b></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/utkarsh.jpg' %}" alt="team member" class="img-responsive"   >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>I love to introduce myself as the Project Manager of Coding Club.</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://www.facebook.com/utkarsh.jain.33633344" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="https://github.com/LavishGulati">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Utkarsh Jain</b></h5>
+                            <span><b>Project Manager</b></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/harit.jpg' %}" alt="team member" class="img-responsive"   >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>I love to introduce myself as the External Relations Manager of Coding Club.</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://www.facebook.com/haritk17" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="https://github.com/LavishGulati">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Harit Gupta</b></h5>
+                            <span><b>External Relations Manager</b></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/pranav.jpg' %}" alt="team member" class="img-responsive"   >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>I love to introduce myself as Developer of Coding Club.</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://www.facebook.com/pranav.goel.547" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="https://github.com/LavishGulati">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Pranav Goel</b></h5>
+                            <span><b>Developers' Team</b></span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/vasu.jpg' %}" alt="team member" class="img-responsive"   >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>I love to introduce myself as Developer of Coding Club.</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://www.facebook.com/profile.php?id=100020969453221" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="https://github.com/LavishGulati">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Vasu Goyal</b></h5>
+                            <span><b>Developers' Team</b></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/vakul.jpg' %}" alt="team member" class="img-responsive"   >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>I love to introduce myself as Developer of Coding Club.</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://www.facebook.com/vakul.gupta.33" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="https://github.com/LavishGulati">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Vakul Gupta</b></h5>
+                            <span><b>Developers' Team</b></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/chirag.jpg' %}" alt="team member" class="img-responsive"   >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>I love to introduce myself as Developer of Coding Club.</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://www.facebook.com/cgupta3131" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="https://github.com/LavishGulati">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Chirag Gupta</b></h5>
+                            <span><b>Developers' Team</b></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/shubham.jpg' %}" alt="team member" class="img-responsive"  >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>A tech geek explorer, he is both simple and complex. He is fond of painting and poetry and is an avid learner.He is a work in progress - a constantly self-correcting updating Book of Life.</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://www.fb.com/gptshubham595" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="https://github.com/gptshubham595">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Shubham Kumar Gupta</b></h5>
+                            <span><b>Developers' Team</b></span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/ritwik.jpg' %}" alt="team member" class="img-responsive"  >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>I love to introduce myself as a student developer, presently trying to explore all areas of coding.</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://www.facebook.com/profile.php?id=100006958546245" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="https://github.com/Dips2705">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Ritwik Ganguly</b></h5>
+                            <span><b>Web/App Development Coordinator</b></span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/kartikeya.jpg' %}" alt="team member" class="img-responsive"  >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>I love to introduce myself as the Web/App Development Coordinator of Coding Club.</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://www.facebook.com/kartikeya.saxena.37" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="https://github.com/LavishGulati">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Kartikeya Saxena</b></h5>
+                            <span><b>Web/App Development Coordinator</b></span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/amulya.jpg' %}" alt="team member" class="img-responsive"  >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>I love to introduce myself as the Competitive Coding Coordinator of Coding Club.</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://www.facebook.com/amulya.dubey.56" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="https://github.com/LavishGulati">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Amulya Dubey</b></h5>
+                            <span><b>Competitive Coding Coordinator</b></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/shubham_singh.jpg' %}" alt="team member" class="img-responsive"  >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>I love to introduce myself as the Machine Learning Coordinator of Coding Club.</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://www.facebook.com/shubhamguttu123" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="https://github.com/LavishGulati">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Shubham Singh</b></h5>
+                            <span><b>Machine Learning Coordinator</b></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/jatin.jpg' %}" alt="team member" class="img-responsive"   >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>I love to introduce myself as the Open Source Coordinator of Coding Club.</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://www.facebook.com/jatinsh221B" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="https://github.com/JatinSH">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Jatin Goel</b></h5>
+                            <span><b>Open Source Coordinator</b></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/krishna.jpg' %}" alt="team member" class="img-responsive"  >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>Tech enthusiast, photography enthusiast, fond of painting and photo editing, explorer, always ready to help everyone</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://www.facebook.com/krishna.annapurne" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="https://github.com/krishnaannapurne">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Krishna Annapurne</b></h5>
+                            <span><b>Events Head</b></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/amey.jpg' %}" alt="team member" class="img-responsive"  >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>I love to introduce myself as the Events Head of Coding Club.</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://www.facebook.com/amey.varhade.7" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="https://github.com/LavishGulati">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Amey Varhade</b></h5>
+                            <span><b>Events Head</b></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="{% static 'CodingClubIITG/images_2/teamphotos/vidhi' %}" alt="team member" class="img-responsive"  >
+                            </div>
+                            <div class="team-hover">
+                                <div class="desk">
+                                    <b><h4>Hi There !</h4></b>
+                                    <p>I love to introduce myself as the Designer of Coding Club.</p>
+                                </div>
+                                <div class="s-link">
+
+                                    <a href="https://www.facebook.com/bhati.vidhi" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                    <a href="#">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-title">
+                            <h5><b>Vidhi Bhati</b></h5>
+                            <span><b>Designer</b></span>
+                        </div>
+                    </div>
+                </div>
+ -->
+
+               </div>
+            </div>
+
+                <div id="past" class="container tab-pane fade"><br>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="{% static 'CodingClubIITG/images/teamphotos/yatheendra.jpg' %}" alt="team member" class="img-responsive" >
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <b><h4>Hi There !</h4></b>
+                                        <p>I love to introduce myself as the Secretary of Coding Club.</p>
+                                    </div>
+                                    <div class="s-link">
+
+                                        <a href="https://www.facebook.com/kymouli" >   <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"> </a>
+                                        <a href="https://github.com/kymouli">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5><b>Yatheendra Mouli</b></h5>
+                                <span><b>Joint Secretary</b></span>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4 col-sm-4">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="{% static 'CodingClubIITG/images/teamphotos/arpitmathur.jpg' %}" alt="team member" class="img-responsive" >
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <b><h4>Hi There !</h4></b>
+                                        <p>I love to introduce myself as the Joint Secretary of Coding Club.</p>
+                                    </div>
+                                    <div class="s-link">
+                                        <a href="https://www.facebook.com/arpit.mathur.31">
+                                        <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"></a>
+                                    <a href="">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5><b>Arpit Mathur</b></h5>
+                                <span><b>Joint Secretary</b></span>
+                            </div>
+                        </div>
+
+                        <!-- end of One team member full code -->
+                        <!-- One team member full code -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="{% static 'CodingClubIITG/images/teamphotos/vedant.jpg' %}" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <b><h4>Hi There !</h4></b>
+                                        <p>I love to introduce myself as the Projects Manager of Coding Club.</p>
+                                    </div>
+                                    <div class="s-link">
+                                        <a href="https://www.facebook.com/vedantrathore13">
+                                        <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"></a>
+                                    <a href="">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5><b>Vedant Rathore</b></h5>
+                                <span><b>Projects Manager</b></span>
+                            </div>
+                        </div>
+
+                        <!-- end of One team member full code -->
+                        <!-- One team member full code -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="{% static 'CodingClubIITG/images/teamphotos/shubhamsinghal.jpg' %}" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <b><h4>Hi There !</h4></b>
+                                        <p>I love to introduce myself as the Web Development Head of Coding Club.</p>
+                                    </div>
+                                    <div class="s-link">
+                                       <a href="https://www.facebook.com/ssinghal1968">
+                                       <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"></a>
+                                     <a href="">  <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5><b>Shubham Singhal</b></h5>
+                                <span><b>Web Development Head</b></span>
+                            </div>
+                        </div>
+
+                        <!-- end of One team member full code -->
+                        <!-- One team member full code -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="{% static 'CodingClubIITG/images/teamphotos/mayank.jpg' %}" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <b><h4>Hi There !</h4></b>
+                                        <p>I love to introduce myself as the Web Development Head of Coding Club.</p>
+                                    </div>
+                                    <div class="s-link">
+                                        <a href="https://www.facebook.com/pmayank96">
+                                        <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"></a>
+                                    <a href="">   <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5><b>Mayank Patidar</b></h5>
+                                <span><b>Web Development Head</b></span>
+                            </div>
+                        </div>
+
+                        <!-- end of One team member full code -->
+                        <!-- One team member full code -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="{% static 'CodingClubIITG/images/teamphotos/ankit.jpg' %}" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <b><h4>Hi There !</h4></b>
+                                        <p>I love to introduce myself as the App Development Head of Coding Club.</p>
+                                    </div>
+                                    <div class="s-link">
+                                        <a href="https://www.facebook.com/aks2311">
+                                        <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"></a>
+                                      <a href=""> <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5><b>Ankit Singh</b></h5>
+                                <span><b>App Development Head</b></span>
+                            </div>
+                        </div>
+
+                        <!-- end of One team member full code -->
+                        <!-- One team member full code -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="{% static 'CodingClubIITG/images/teamphotos/sagar.jpg' %}" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <b><h4>Hi There !</h4></b>
+                                        <p>I love to introduce myself as the Game Development Head of Coding Club.</p>
+                                    </div>
+                                    <div class="s-link">
+                                         <a href="https://www.facebook.com/sagar.kohli2">
+                                        <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"></a>
+                                     <a href="">  <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5><b>Sagar Kohli</b></h5>
+                                <span><b>Game Development Head</b></span>
+                            </div>
+                        </div>
+
+                        <!-- end of One team member full code -->
+                        <!-- One team member full code -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="{% static 'CodingClubIITG/images/teamphotos/ajeyo.jpg' %}" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <b><h4>Hi There !</h4></b>
+                                        <p>I love to introduce myself as the Competitive Coding Head of Coding Club.</p>
+                                    </div>
+                                    <div class="s-link">
+                                        <a href="https://www.facebook.com/ajeyo.dey">
+                                        <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"></a>
+                                     <a href="">  <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5><b>Ajeyo Dey</b></h5>
+                                <span><b>Competitive Coding Head</b></span>
+                            </div>
+                        </div>
+
+                        <!-- end of One team member full code -->
+                        <!-- One team member full code -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="{% static 'CodingClubIITG/images/teamphotos/shivram.jpg' %}" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <b><h4>Hi There !</h4></b>
+                                        <p>I love to introduce myself as the Competitive Coding Head of Coding Club.</p>
+                                    </div>
+                                    <div class="s-link">
+                                        <a href="https://www.facebook.com/mahendrad1">
+                                        <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"></a>
+                                     <a href="">  <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5><b>Shivram Gowtham</b></h5>
+                                <span><b>Competitive Coding Head</b></span>
+                            </div>
+                        </div>
+
+                        <!-- end of One team member full code -->
+                        <!-- One team member full code -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="{% static 'CodingClubIITG/images/teamphotos/satyaprakash.jpg' %}" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <b><h4>Hi There !</h4></b>
+                                        <p>I love to introduce myself as the Networks,Security and Hacking Head of Coding Club.</p>
+                                    </div>
+                                    <div class="s-link">
+                                        <a href="https://www.facebook.com/satyajnv">
+                                        <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"></a>
+                                     <a href="">  <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5><b>Satya Prakash</b></h5>
+                                <span><b>Networks,Security and Hacking Head</b></span>
+                            </div>
+                        </div>
+
+                        <!-- end of One team member full code -->
+                        <!-- One team member full code -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="{% static 'CodingClubIITG/images/teamphotos/kushal.jpg' %}" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <b><h4>Hi There !</h4></b>
+                                        <p>I love to introduce myself as the Open Source Head of Coding Club.</p>
+                                    </div>
+                                    <div class="s-link">
+                                         <a href="https://www.facebook.com/ksvsk">
+                                        <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"></a>
+                                      <a href=""> <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5><b>Kushal Ksvs</b></h5>
+                                <span><b>Open Source Head</b></span>
+                            </div>
+                        </div>
+
+                        <!-- end of One team member full code -->
+                        <!-- One team member full code -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="{% static 'CodingClubIITG/images/teamphotos/mahim.jpg' %}" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <b><h4>Hi There !</h4></b>
+                                        <p>I love to introduce myself as the Open Source Head of Coding Club.</p>
+                                    </div>
+                                    <div class="s-link">
+                                         <a href="https://www.facebook.com/profile.php?id=100000435718210">
+                                        <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"></a>
+                                     <a href="">  <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5><b>Mahim Goyal</b></h5>
+                                <span><b>Open Source Head</b></span>
+                            </div>
+                        </div>
+
+                        <!-- end of One team member full code -->
+                        <!-- One team member full code -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="{% static 'CodingClubIITG/images/teamphotos/shreya.jpg' %}" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <b><h4>Hi There !</h4></b>
+                                        <p>I love to introduce myself as the Events Manager of Coding Club.</p>
+                                    </div>
+                                    <div class="s-link">
+                                         <a href="https://www.facebook.com/shreya.jain.12764">
+                                         <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"></a>
+                                     <a href="">  <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5><b>Shreya Jain</b></h5>
+                                <span><b>Events Manager</b></span>
+                            </div>
+                        </div>
+
+                        <!-- end of One team member full code -->
+
+                        <!-- One team member full code -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="{% static 'CodingClubIITG/images/teamphotos/pavan.jpg' %}" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <b><h4>Hi There !</h4></b>
+                                        <p>I love to introduce myself as the Events Manager of Coding Club.</p>
+                                    </div>
+                                    <div class="s-link">
+                                         <a href="https://www.facebook.com/pavan71198">
+                                         <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"></a>
+                                     <a href="">  <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5><b>Pavan Kumar</b></h5>
+                                <span><b>Events Manager</b></span>
+                            </div>
+                        </div>
+
+                        <!-- end of One team member full code -->
+                        <!-- One team member full code -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="{% static 'CodingClubIITG/images/teamphotos/pulkit.jpg' %}" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <b><h4>Hi There !</h4></b>
+                                        <p>I love to introduce myself as the Events Manager of Coding Club.</p>
+                                    </div>
+                                    <div class="s-link">
+                                        <a href="https://www.facebook.com/pulkit333">
+                                        <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"></a>
+                                     <a href="">  <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5><b>Pulkit Agarwal</b></h5>
+                                <span><b>Events Manager</b></span>
+                            </div>
+                        </div>
+
+                        <!-- end of One team member full code -->
+                        <!-- One team member full code -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="https://image.freepik.com/free-photo/man-standing-with-a-black-t-shirt_1187-1045.jpg" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <b><h4>Hi There !</h4></b>
+                                        <p>I love to introduce myself as the Events Manager of Coding Club.</p>
+                                    </div>
+                                    <div class="s-link">
+                                         <a href="https://www.facebook.com/vedantc98">
+                                         <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"></a>
+                                       <a href=""><img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5><b>Vedant Chakravadhanula</b></h5>
+                                <span><b>Events Manager</b></span>
+                            </div>
+                        </div>
+
+                        <!-- end of One team member full code -->
+
+                        <!-- One team member full code -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="{% static 'CodingClubIITG/images/teamphotos/nawaz.jpg' %}" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <b><h4>Hi There !</h4></b>
+                                        <p>I love to introduce myself as the Design Head of Coding Club.</p>
+                                    </div>
+                                    <div class="s-link">
+                                        <a href="https://www.facebook.com/nawazhassan10">
+                                        <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"></a>
+                                     <a href="">  <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5><b>Nawaz Hassan</b></h5>
+                                <span><b>Design Head</b></span>
+                            </div>
+                        </div>
+
+                        <!-- end of One team member full code -->
+                        <!-- One team member full code -->
+                        <div class="col-md-4 col-sm-4">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <img src="{% static 'CodingClubIITG/images/teamphotos/vrishank.jpg' %}" alt="team member" class="img-responsive">
+                                </div>
+                                <div class="team-hover">
+                                    <div class="desk">
+                                        <b><h4>Hi There !</h4></b>
+                                        <p>I love to introduce myself as the Media Head of Coding Club.</p>
+                                    </div>
+                                    <div class="s-link">
+                                         <a href="https://www.facebook.com/vrishank123">
+                                         <img id="fb" src="{% static 'CodingClubIITG/images/fb.png' %}" height="28px" width="28px"></a>
+                                     <a href="">  <img id="git" src="{% static 'CodingClubIITG/images/github.png' %}" height="27px" width="27px"> </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-title">
+                                <h5><b>Vrishank Bhardwaj</b></h5>
+                                <span><b>Media Head</b></span>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+    </div>
+</div>
+{% endblock %}

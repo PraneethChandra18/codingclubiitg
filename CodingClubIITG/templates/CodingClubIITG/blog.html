@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+<html>
+<head>
+    <title>{% block title %}eventDescription{% endblock %}</title>
+</head>
+<body>
+{% block body %}
+    <div>
+        {{post.title}}
+        {{post.content}}
+        {{post.author}}
+        {{post.created_on}}
+    </div>
+{% endblock %}
+</body>
+</html>

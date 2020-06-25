@@ -1,0 +1,22 @@
+<a href="{% url 'unfavorite_project_all' %}"><button type="button" class="btn btn-theme" data-toggle="tooltip" data-placement="bottom" title="Unfavorites"><i class="material-icons">favorite_border</i> </button></a>
+
+
+<div class="container">
+	<div class="row">
+		{% for favorite in favorites %}
+		<div class="col-sm-4">
+			<div class="card">
+				<div class="card-header"><a href="{% url 'project_detail' favorite.project.id %}">{{ favorite.project.name }}</a></div>
+				<div class="card-block">
+					<img class="img-responsive" style="object-fit: cover;" src="{{ project.img.url }}">
+					<h3>Outline: {{ favorite.project.outline }}</h3>
+					<p>Project Details: {{ favorite.project.details }}</p>
+					<p>Pre-Requisites: {{ favorite.project.prereq }}</p>
+
+				</div>
+				<div class="card-footer">Date: {{ favorite.project.date }}</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>

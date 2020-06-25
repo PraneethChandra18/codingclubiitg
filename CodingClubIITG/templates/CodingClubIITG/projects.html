@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		{% for project in projects %}
+		<div class="col-sm-4">
+			<div class="card">
+				<div class="card-header"><a href="{% url 'project_detail' project.id %}">{{ project.name }}</a></div>
+				<div class="card-block">
+					<img class="img-responsive" style="object-fit: cover;" src="{{ project.img.url }}">
+					<h3>Outline: {{ project.outline }}</h3>
+					<p>Project Details: {{ project.details }}</p>
+					<p>Pre-Requisites: {{ project.prereq }}</p>
+					{% if user %}
+					<div class="text-right" id="effect{{project.pk}}">
+						{% if project in fav_projects %}
+							<button type="button" class="btn btn-theme" data-toggle="tooltip" data-placement="bottom" title="Unfavorite" value="{{project.pk}}" onclick="unfavorite(this)"><i class="material-icons" style="color:red">favorite</i></button>
+						{% else %}
+							<button type="button" class="btn btn-theme" data-toggle="tooltip" data-placement="bottom" title="Add to favorites" value="{{project.pk}}" onclick="favorite(this)"><i class="material-icons">favorite_border</i> </button>
+						{% endif %}
+					</div>
+					{% endif %}
+				</div>
+				<div class="card-footer">Date: {{ project.date }}</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+
+<script>
+	function favorite(d) {
+		var input = d.getAttribute('value');
+		$.ajax({
+				url: "{% url 'favorite_project' %}",
+				data: {
+					csrfmiddlewaretoken: "{{ csrf_token }}",
+					'inputValue': input
+				},
+				dataType: 'json',
+				success: function (data) {
+					place = "effect" + input
+					html = '<button type="button" class="btn btn-theme" data-toggle="tooltip" data-placement="bottom" title="Unfavorite" value="'+data['pk']+'" onclick="unfavorite(this)"><i class="material-icons" style="color:red">favorite</i></button>'
+					document.getElementById(place).innerHTML = html;
+				}
+			});
+		}
+
+	function unfavorite(d) {
+		var input = d.getAttribute('value');
+
+		$.ajax({
+				url: "{% url 'unfavorite_project' %}",
+				data: {
+					csrfmiddlewaretoken: "{{ csrf_token }}",
+					'inputValue': input
+				},
+				dataType: 'json',
+				success: function (data) {
+					place = "effect" + input
+					html = '<button type="button" class="btn btn-theme" data-toggle="tooltip" data-placement="bottom" title="Add to favorites" value="'+data['pk']+'" onclick="favorite(this)"><i class="material-icons">favorite_border</i></button>'
+					document.getElementById(place).innerHTML = html;
+
+				}
+			});
+		}
+	</script>
+
+{% endblock %}

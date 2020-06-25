@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container" style="margin-top:20px">
+    <div id="comment{{main_comment.pk}}">
+    <div class="panel panel-warning">
+      <div class="panel-heading">Written by <strong>{{ main_comment.user.username }}</strong></div>
+      <div class="panel-body">{{ main_comment.text }}</div>
+      <div class="panel-footer">
+        {% if comment.user == user %}
+        <button type="button" class="btn btn-default btn-sm" id="{{ main_comment.pk }}" name="{{ main_comment.user.username }}" value="{{ main_comment.text }}" onclick="edit(this)"><i class='fas fa-edit'></i>  Edit</button> &nbsp;
+        <a href="{% url 'delete_comment_event' main_comment.pk %}"><button type="button" class="btn btn-default btn-sm"><i class='fas fa-trash-alt'></i>  Delete</button> &nbsp;</a>
+        {% endif %}
+      </div>
+    </div>
+    </div>
+
+  {% if comments %}
+  <h1>Replies</h1>
+  <div id="overflow" style="height:600px">
+    {% for comment in comments %}
+    <div id="comment{{comment.pk}}">
+    <div class="panel panel-info">
+      <div class="panel-heading">Written by <strong>{{ comment.user.username }}</strong></div>
+      <div class="panel-body">{{ comment.text }}</div>
+      <div class="panel-footer">
+        {% if comment.user == user %}
+        <button type="button" class="btn btn-default btn-sm" id="{{ comment.pk }}" name="{{ comment.user.username }}" value="{{ comment.text }}" onclick="edit(this)"><i class='fas fa-edit'></i>  Edit</button> &nbsp;
+        <a href="{% url 'delete_reply_event' comment.pk %}"><button type="button" class="btn btn-default btn-sm"><i class='fas fa-trash-alt'></i>  Delete</button> &nbsp;</a>
+        {% endif %}
+        <a href="{% url 'discussion_event_replies' comment.pk %}"><span style="color:black">Replies<i class='fas fa-angle-down'></i></span></a>
+      </div>
+    </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+    <h1> No replies yet. </h1>
+  {% endif %}
+
+  <nav class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="mx-auto order-0">
+    <form class="form-inline" method="get" action="{% url 'reply_comment_event' comment_id %}">
+      <input class="form-control mr-sm-2" type="text" style="width:1500px" placeholder="Enter a comment..." id="comment" name="comment">
+      <button class="btn btn-default" type="submit" style="background-color:white;border-color:#ff9800;" data-toggle="tooltip" data-placement="top" title="Send"><i class="fa fa-send" style="font-size:24px;color:#ff9800"></i></button>
+    </form>
+    </div>
+  </nav>
+</div>
+
+
+<script>
+  function edit(d) {
+    var input = d.getAttribute('id');
+    var text = d.getAttribute('value');
+    var place ="comment" + input;
+    var username = d.getAttribute('name');
+    var sub = "'edit_comment_event' "+input
+    html = '<div class="panel panel-info"><div class="panel-heading">Written by <strong>'+username+'</strong></div><div class="panel-body"><input type="text" style="width:1500px" value='+text+' id="comment_edit" name="comment_edit"><button class="btn btn-primary" type="button" id='+input+' onclick="edit_submission(this)">Edit</button></div></div>'
+    document.getElementById(place).innerHTML = html;
+    }
+
+  function edit_submission(d) {
+    var input = document.getElementById("comment_edit").value;
+    var pk = d.getAttribute('id');
+    $.ajax({
+				url: "{% url 'edit_comment_event' %}",
+				data: {
+					csrfmiddlewaretoken: "{{ csrf_token }}",
+					'inputValue': input,
+          'pk':pk
+				},
+				dataType: 'json',
+				success: function (data) {
+          window.location.reload();
+				}
+			});
+    }
+
+    onload = function() {
+      document.getElementById("overflow").style.overflow = "auto";
+    };
+
+</script>
+{% endblock %}
